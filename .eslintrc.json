@@ -18,12 +18,22 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier"
     ],
     "rules": {
         "@typescript-eslint/semi": [
             "error",
             "always"
+        ],
+        "max-len": [
+            "error",
+            {
+                "code": 140,
+                "tabWidth": 2,
+                "ignoreRegExpLiterals": true,
+                "ignoreUrls": true
+            }
         ]
     }
 }
