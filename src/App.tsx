@@ -1,21 +1,10 @@
-import React, { FC } from 'react';
-import useSWR from 'swr';
+import { FC } from 'react';
+import { useRoutes } from 'react-router-dom';
+import { routes } from './core/routes';
 
 const App: FC = () => {
-  const { data, error } = useSWR(`/posts`);
-  console.log('data => ', data);
-  console.log('error => ', error);
 
-  if (!data) {
-    return <div>Loading</div>;
-  }
-  return (
-    <ul>
-      {
-        data.map((post: any) => (<li key={post.id}>{post.title}</li>))
-      }
-    </ul>
-  );
+  return useRoutes(routes);
 };
 
 export default App;
